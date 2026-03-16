@@ -1,50 +1,59 @@
-# Welcome to your Expo app 👋
+# API SenaiFlix - Node.Js + Express
+API REST simples para gerenciar séries e filmes
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+## Pré-Requisitos
+- Node.js instalado
 
-## Get started
-
-1. Install dependencies
-
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
+## Como rodar
 ```bash
-npm run reset-project
+npm i 
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Iniciar o servidor
+```bash
+node index.js
+```
 
-## Learn more
+### Acessar
+Abra o navegador em: `http://localhost:3000`
 
-To learn more about developing your project with Expo, look at the following resources:
+## Endpoints
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Filmes
 
-## Join the community
+| Método | Endpoint | Descrição |
+|--------|----------|-----------|
+| GET | `/filmes` |Lista todos os filmes |
+| GET | `/filmes/:id` | Buscar um filme específico |
+| POST | `/filmes/` | Cria um novo filme |
+| GET | 	`/filmes?genre=` | Filtra um filme pelo gênero |
 
-Join our community of developers creating universal apps.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### Séries
+
+| Método | Endpoint | Descrição |
+|--------|----------|-----------|
+| GET | `/series` |Lista todos as séries |
+| GET | `/series/:id` | Buscar uma série específica |
+| POST | `/series/` | Cria uma nova série |
+| GET | 	`/series?genre=` | Filtra uma série pelo gênero |
+
+## Tanto filmes quanto séries possuem as seguintes propriedades:
+- id
+- title
+- description
+- image
+- genre
+- releaseYear
+
+## Tecnologias
+- Node.js
+- Express
+
+  ## Notas
+  - Os dados são armazenados em memória (reiniciar o servidor apaga tudo)
+    
+
+
+
+
